@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>interval演示</title>
+    <script src="angularjs/angular.min.js"></script>
+    <script>
+        //创建模块
+        var app=angular.module('pinyougou',[]);
+
+        //创建一个controller
+        app.controller('intervalController',function ($scope,$interval) {
+            //定义一个参数
+            $scope.num=2345346576;
+
+            var time = $interval(function () {
+                //num每次减1
+                $scope.num-=1000;
+
+                if($scope.num<=0){
+                    //停止循环
+                    $interval.cancel(time);
+                }
+
+                $scope.str = datetimeinfo($scope.num);
+
+            },1000);
+        });
+
+        /*
+        *
+        * 该方法的作用用于换算毫秒时间
+        *               换算成：有多少天、有多少时、有多少分钟、有多少秒
+        * */
+        datetimeinfo=function (num) {
+            var second = 1000;      //1秒有多少毫秒
+            var minute = 1000*60;   //1分钟有多少毫秒
+            var hour =1000*60*60;   //1小时有多少毫秒
+            var day = 1000*60*60*24;//1天有多少毫秒
+
+            //天
+            var days = parseInt( num/day);
+
+            //小时
+            var hours =parseInt(num%day/hour);
+
+            //分钟
+            var minutes =parseInt( (num-(day*days) - (hour*hours))/minute );
+
+            //秒
+            var seconds = parseInt( (num-(day*days)-(hour*hours)-(minute*minutes))/second);
+
+            return days+"----"+hours+"----"+minutes+'----'+seconds;
+        }
+
+    </script>
+</head>
+<body ng-app="pinyougou" ng-controller="intervalController">
+{{str}}
+</body>
+</html>

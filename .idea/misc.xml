@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/cas-client-demo1" />
+    <file type="web" url="file://$PROJECT_DIR$/cas-client-demo2" />
+    <file type="web" url="file://$PROJECT_DIR$/cas-springsecurity-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/dubbo-consumer" />
+    <file type="web" url="file://$PROJECT_DIR$/dubbo-provider" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-cart-service" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-cart-web" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-content-service" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-manager-web" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-order-service" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-page-service" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-pay-service" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-portal-web" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-search-service" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-search-web" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-seckill-service" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-seckill-task" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-seckill-web" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-sellergoods-service" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-shop-web" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-user-service" />
+    <file type="web" url="file://$PROJECT_DIR$/pinyougou-user-web" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-security-demo" />
+    <file type="web" url="file://$PROJECT_DIR$/weixinpay-demo" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pinyougou-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo-provider/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/pinyougou-reverser/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-data-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-data-solr-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/freemarker-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/jms-producer/pom.xml" />
+        <option value="$PROJECT_DIR$/jms-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/itheima-message-service/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-activeMQ/pom.xml" />
+        <option value="$PROJECT_DIR$/cas-client-demo1/pom.xml" />
+        <option value="$PROJECT_DIR$/cas-client-demo2/pom.xml" />
+        <option value="$PROJECT_DIR$/cas-springsecurity-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/weixinpay-demo/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

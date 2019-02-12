@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs-内置对象$http</title>
+    <link rel="stylesheet" href="js/select2/select2.css" />
+    <link rel="stylesheet" href="js/select2/select2-bootstrap.css" />
+    <script type="text/javascript" src="/js/jquery/dist/jquery.js"></script>
+    <script src="/js/angularjs/angular.min.js" type="text/javascript"></script>
+    <script src="/js/select2/select2.min.js" type="text/javascript"></script>
+
+
+    <script>
+        //用js创建模块
+        var app=angular.module('pinyougou',[]);
+
+        //创建一个控制层  第一个参数：给控制器取名字
+        app.controller('select2Controller',function ($scope,$http) {//类的主体开始
+            $scope.config1 = {
+                data: [{id:1,text:'没有BUG'},{id:2,text:'duplicate'},{id:3,text:'invalid'},{id:4,text:'wontfix'}],
+                placeholder: '加载完毕'
+            };
+
+        });//类的主体结束
+
+    </script>
+
+    <script type="text/javascript" src="/js/angularjs/angular-select2.js"></script>
+</head>
+<body ng-app="pinyougou" ng-controller="select2Controller">
+
+<div>
+    select2:表明使用select2<br/>
+    ng-model:绑定变量到$scope中<br/>
+    select2-model:绑定变量到$scope中<br/>
+    config:引用的数据源<br/>
+</div>
+<input select2 ng-model="a" select2-model="aS2" config="config1" class="form-control" type="text"/>
+
+</body>
+</html>

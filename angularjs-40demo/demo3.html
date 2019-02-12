@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs-初始化指令</title>
+    <!--引入依赖-->
+    <script src="/js/angular.min.js"></script>
+
+
+</head>
+<body>
+
+<h3>
+    <per>
+        ng-init:初始化赋值、初始化调用等等
+    </per>
+</h3>
+
+<div ng-app ng-init="username='张三'">
+    用户名：<input ng-model="username"/> <br/>
+    用户名:{{username}}
+</div>
+
+</body>
+</html>

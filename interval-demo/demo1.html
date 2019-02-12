@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>interval演示</title>
+    <script src="angularjs/angular.min.js"></script>
+    <script>
+        //创建模块
+        var app=angular.module('pinyougou',[]);
+
+        //创建一个controller
+        app.controller('intervalController',function ($scope,$interval) {
+            //定义一个参数
+            $scope.num=10;
+
+            var time = $interval(function () {
+                //num每次减1
+                $scope.num--;
+
+                if($scope.num<=0){
+                    //停止循环
+                    $interval.cancel(time);
+                }
+            },1000);
+
+        });
+
+    </script>
+</head>
+<body ng-app="pinyougou" ng-controller="intervalController">
+{{num}}
+</body>
+</html>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="testTables" targetRuntime="MyBatis3">
+        <!-- 生成的pojo，将implements Serializable-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
+
+        <!--通用Mapper所需参数-->
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="forceAnnotation" value="true" />
+        </plugin>
+
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/pinyougoudb" userId="root"
+                        password="123456">
+        </jdbcConnection>
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
+            NUMERIC 类型解析为java.math.BigDecimal -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- targetProject:生成PO类的位置 -->
+        <javaModelGenerator targetPackage="com.pinyougou.model"
+                            targetProject=".\src\main\java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+        <!-- targetProject:mapper映射文件生成的位置 -->
+        <sqlMapGenerator targetPackage="com.pinyougou.mapper"
+                         targetProject=".\src\main\java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </sqlMapGenerator>
+        <!-- targetPackage：mapper接口生成的位置 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.pinyougou.mapper"
+                             targetProject=".\src\main\java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+        </javaClientGenerator>
+
+        <!-- 指定数据库表 -->
+        <table domainObjectName="Address" tableName="tb_address"></table>
+        <table domainObjectName="Areas" tableName="tb_areas"></table>
+        <table domainObjectName="Brand" tableName="tb_brand"></table>
+        <table domainObjectName="Cities" tableName="tb_cities"></table>
+        <table domainObjectName="Content" tableName="tb_content"></table>
+        <table domainObjectName="ContentCategory" tableName="tb_content_category"></table>
+        <table domainObjectName="FreightTemplate" tableName="tb_freight_template"></table>
+        <table domainObjectName="Goods" tableName="tb_goods"></table>
+        <table domainObjectName="GoodsDesc" tableName="tb_goods_desc"></table>
+        <table domainObjectName="Item" tableName="tb_item"></table>
+        <table domainObjectName="ItemCat" tableName="tb_item_cat"></table>
+        <table domainObjectName="Order" tableName="tb_order"></table>
+        <table domainObjectName="OrderItem" tableName="tb_order_item"></table>
+        <table domainObjectName="PayLog" tableName="tb_pay_log"></table>
+        <table domainObjectName="Provinces" tableName="tb_provinces"></table>
+        <table domainObjectName="SeckillGoods" tableName="tb_seckill_goods"></table>
+        <table domainObjectName="SeckillOrder" tableName="tb_seckill_order"></table>
+        <table domainObjectName="Seller" tableName="tb_seller"></table>
+        <table domainObjectName="Specification" tableName="tb_specification"></table>
+        <table domainObjectName="SpecificationOption" tableName="tb_specification_option"></table>
+        <table domainObjectName="TypeTemplate" tableName="tb_type_template"></table>
+        <table domainObjectName="User" tableName="tb_user"></table>
+    </context>
+</generatorConfiguration>

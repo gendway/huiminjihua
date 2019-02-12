@@ -1,0 +1,23 @@
+[
+  {
+    "attributeValue": [
+      "4G",
+      "8G",
+      "16G"
+    ],
+    "attributeName": "机身内存"
+  },
+  {
+    "attributeValue": [
+      "联通4G",
+      "移动3G"
+    ],
+    "attributeName": "网络"
+  },
+  {
+    "attributeValue": [
+      "165寸"
+    ],
+    "attributeName": "尺码"
+  }
+]

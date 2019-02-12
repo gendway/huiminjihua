@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs-内置对象$http</title>
+    <!--引入依赖-->
+    <script src="/js/angular.min.js"></script>
+    <script>
+        //用js创建模块
+        var app=angular.module('pinyougou',[]);
+
+        //创建一个控制层  第一个参数：给控制器取名字   
+        app.controller('demoController',function ($scope,$http) {//类的主体开始
+            
+
+
+            //创建方法，实现查询
+            $scope.getData=function () {
+                //使用$http向后台发送请求
+                $http.get('data.json').success(function (response) {
+                    $scope.list=response;
+                });
+            }
+
+            
+        });//类的主体结束
+
+    </script>
+
+</head>
+<body>
+
+<h3>
+    <per>
+        内置对象：$http
+    </per>
+</h3>
+
+<!--
+    ng-app:创建一个默认模块并使用
+-->
+<div ng-app="pinyougou" ng-controller="demoController" ng-init="getData()">
+
+    <!--
+        list是$scope中的变量  in:固定写法  i:定义临时变量接受当前循环到的数据
+    -->
+       <div ng-repeat="i in list">
+           {{i.name}}今年{{i.age}}岁了，家住{{i.address}}
+       </div>
+</div>
+
+</body>
+</html>

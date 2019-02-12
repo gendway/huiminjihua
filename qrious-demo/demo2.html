@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>二维码</title>
+</head>
+<body>
+<script src="qrious.min.js"></script>
+<img id="abc">
+
+<script>
+    var nb = new QRious({
+        element: document.getElementById('abc'),
+        background: 'yellow', foreground: 'yellow',
+        level: 'H', size: 400,
+        value: '有情人终是表兄妹'
+    });
+</script>
+</body>
+</html>

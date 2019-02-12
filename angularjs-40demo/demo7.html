@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs-循环输出对象数组</title>
+    <!--引入依赖-->
+    <script src="/js/angular.min.js"></script>
+    <script>
+        //用js创建模块
+        var app=angular.module('pinyougou',[]);
+
+        //创建一个控制层  第一个参数：给控制器取名字   
+        app.controller('demoController',function ($scope) {//类的主体开始
+            
+           //定义变量
+            $scope.list=[
+                {"name":"小红","age":22,"address":"深圳"},
+                {"name":"小花","age":23,"address":"武汉"},
+                {"name":"小黑","age":24,"address":"广州"},
+                {"name":"小白","age":25,"address":"长沙"}
+            ];
+            
+            
+        });//类的主体结束
+
+    </script>
+
+</head>
+<body>
+
+<h3>
+    <per>
+        循环输出对象数组
+    </per>
+</h3>
+
+<!--
+    ng-app:创建一个默认模块并使用
+-->
+<div ng-app="pinyougou" ng-controller="demoController">
+
+    <!--
+        list是$scope中的变量  in:固定写法  i:定义临时变量接受当前循环到的数据
+    -->
+       <div ng-repeat="i in list">
+           {{i.name}}今年{{i.age}}岁了，家住{{i.address}}
+       </div>
+</div>
+
+</body>
+</html>

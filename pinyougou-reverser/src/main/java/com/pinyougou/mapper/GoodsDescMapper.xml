@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pinyougou.mapper.GoodsDescMapper" >
+  <resultMap id="BaseResultMap" type="com.pinyougou.model.GoodsDesc" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="goods_id" property="goodsId" jdbcType="BIGINT" />
+    <result column="specification_items" property="specificationItems" jdbcType="VARCHAR" />
+    <result column="custom_attribute_items" property="customAttributeItems" jdbcType="VARCHAR" />
+    <result column="item_images" property="itemImages" jdbcType="VARCHAR" />
+    <result column="package_list" property="packageList" jdbcType="VARCHAR" />
+    <result column="sale_service" property="saleService" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.pinyougou.model.GoodsDesc" extends="BaseResultMap" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="introduction" property="introduction" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    goods_id, specification_items, custom_attribute_items, item_images, package_list, 
+    sale_service
+  </sql>
+  <sql id="Blob_Column_List" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    introduction
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.pinyougou.model.GoodsDescExample" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tb_goods_desc
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.pinyougou.model.GoodsDescExample" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_goods_desc
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.pinyougou.model.GoodsDescExample" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    delete from tb_goods_desc
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <select id="countByExample" parameterType="com.pinyougou.model.GoodsDescExample" resultType="java.lang.Integer" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    select count(*) from tb_goods_desc
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update tb_goods_desc
+    <set >
+      <if test="record.goodsId != null" >
+        goods_id = #{record.goodsId,jdbcType=BIGINT},
+      </if>
+      <if test="record.specificationItems != null" >
+        specification_items = #{record.specificationItems,jdbcType=VARCHAR},
+      </if>
+      <if test="record.customAttributeItems != null" >
+        custom_attribute_items = #{record.customAttributeItems,jdbcType=VARCHAR},
+      </if>
+      <if test="record.itemImages != null" >
+        item_images = #{record.itemImages,jdbcType=VARCHAR},
+      </if>
+      <if test="record.packageList != null" >
+        package_list = #{record.packageList,jdbcType=VARCHAR},
+      </if>
+      <if test="record.saleService != null" >
+        sale_service = #{record.saleService,jdbcType=VARCHAR},
+      </if>
+      <if test="record.introduction != null" >
+        introduction = #{record.introduction,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update tb_goods_desc
+    set goods_id = #{record.goodsId,jdbcType=BIGINT},
+      specification_items = #{record.specificationItems,jdbcType=VARCHAR},
+      custom_attribute_items = #{record.customAttributeItems,jdbcType=VARCHAR},
+      item_images = #{record.itemImages,jdbcType=VARCHAR},
+      package_list = #{record.packageList,jdbcType=VARCHAR},
+      sale_service = #{record.saleService,jdbcType=VARCHAR},
+      introduction = #{record.introduction,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    update tb_goods_desc
+    set goods_id = #{record.goodsId,jdbcType=BIGINT},
+      specification_items = #{record.specificationItems,jdbcType=VARCHAR},
+      custom_attribute_items = #{record.customAttributeItems,jdbcType=VARCHAR},
+      item_images = #{record.itemImages,jdbcType=VARCHAR},
+      package_list = #{record.packageList,jdbcType=VARCHAR},
+      sale_service = #{record.saleService,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

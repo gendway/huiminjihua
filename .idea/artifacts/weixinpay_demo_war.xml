@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="weixinpay-demo:war">
+    <output-path>$PROJECT_DIR$/weixinpay-demo/target</output-path>
+    <root id="archive" name="weixinpay-demo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="weixinpay-demo:war exploded" />
+    </root>
+  </artifact>
+</component>
