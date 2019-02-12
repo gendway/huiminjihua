@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:solr="http://www.springframework.org/schema/data/solr"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/data/solr
+       http://www.springframework.org/schema/data/solr/spring-solr.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--包扫描-->
+    <context:component-scan base-package="com"/>
+
+    <!--指定solr地址-->
+    <!--<solr:solr-server id="solrServer" url="http://192.168.211.128:28081/solr/collection1"/>-->
+
+    <!--工程中使用-->
+    <bean id="solrServer" class="org.apache.solr.client.solrj.impl.CloudSolrClient">
+        <!--zookeeper集群端口-->
+        <constructor-arg value="192.168.211.129:2181,192.168.211.129:2182,192.168.211.129:2183"/>
+        <!--索引库的名字-->
+        <property name="defaultCollection" value="collection1"></property>
+    </bean>
+
+    <!-- solr模板，使用solr模板可对索引库进行CRUD的操作 -->
+    <bean id="solrTemplate" class="org.springframework.data.solr.core.SolrTemplate">
+        <constructor-arg ref="solrServer"/>
+    </bean>
+
+    <!--依赖mapper-->
+    <import resource="spring-mybatis.xml"/>
+
+</beans>
